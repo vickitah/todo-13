@@ -9,6 +9,7 @@ const Todos = ({todos, setTodos}) => {
         
     }
 
+
     const handlDelete = (id) => {
         let newArray = todos.filter((todo) => id !== todo.id);
         setTodos(newArray);
@@ -24,7 +25,7 @@ const Todos = ({todos, setTodos}) => {
         <ul>
             {todos.map((todo) => <li key={todo.id}>
                 <span>id: {todo.id}</span>
-                <span>body: {todo.body}</span>
+                <span>task: {todo.body || todo.title}</span>
                 <button onClick={() => handlDelete(todo.id)} >delete</button>
             </li>
             )}
